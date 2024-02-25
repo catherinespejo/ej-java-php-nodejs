@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  php-app:
+    image: php:7.4-cli
+    volumes:
+      - ./php-app:/usr/src/myapp
+    working_dir: /usr/src/myapp
+    command: php index.php
+
+  java-app:
+    build: ./java-app
+    image: java-app
+
+  nodejs-app:
+    build: ./nodejs-app
+    image: nodejs-app
